@@ -1,36 +1,31 @@
 package com.pluralsight;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<Product> inventory = getInventory();
 
-        Product product1 = new Product(10, "hammer", 2.99);
-        Product product2 = new Product(20, "pickaxe", 2.99);
-        Product product3 = new Product( 30, "sword", 2.99);
-        Product product4 = new Product(40, "grass", 2.99);
-        Product product5 = new Product(50, "sheep", 2.99);
 
-        inventory.add(product1);
-        inventory.add(product2);
-        inventory.add(product3);
-        inventory.add(product4);
-        inventory.add(product5);
+        try {
+            // create a FileReader connected to the file
+            FileReader fileReader = new FileReader("inventory.csv");
+            // create a BufferedReader to manage the input stream
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        inventory.add(new Product(60, "pig", 2.99 ));
+            // read one line and print it
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
 
-        System.out.println("We carry the following inventory: ");
-        for (int i = 0; i < inventory.size(); i++) {
-            Product p = inventory.get(i);
-            System.out.printf("id: %d Name: %s - Price: $%.2f%n",
-                    p.getId(), p.getName(), p.getPrice());
+            // close the reader to release the file
+            bufferedReader.close();
+        } catch (IOException e) {
+            // print the details so the error is never hidden from you
+            e.printStackTrace();
         }
-    }
-    public static ArrayList<Product> getInventory() {
-        ArrayList<Product> inventory = new ArrayList<Product>();
-// this method loads product objects into inventory
-// and its details are not shown
-        return inventory;
     }
 }
