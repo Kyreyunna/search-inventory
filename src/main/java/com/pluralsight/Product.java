@@ -18,4 +18,7 @@ public class Product {
     public double getPrice() {
         return this.price;
     }
+    public String toRow(){
+       return id + name + price;
+    }
 }

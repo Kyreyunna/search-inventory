@@ -1,12 +1,12 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.*;
+import java.io.*;
 
 
 public class App {
     public static void main(String[] args) {
+        List<Product> products = new ArrayList<>();
 
 
         try {
@@ -18,8 +18,16 @@ public class App {
             // read one line and print it
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+
+                String[] listOfLine = line.split("\\|");//[id, name, price]
+                Product product = new Product(Integer.parseInt(listOfLine[0]),listOfLine[1], Double.parseDouble(listOfLine[2]));
+                products.add(product);
+                System.out.println(products.get(products.size() - 1).toRow());
+//                System.out.println(listOfLine[0] + ", " + listOfLine[1] + ", " + listOfLine[2]);
+
+
             }
+
 
             // close the reader to release the file
             bufferedReader.close();
