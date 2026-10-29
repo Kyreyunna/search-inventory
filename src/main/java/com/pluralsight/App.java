@@ -50,17 +50,24 @@ public class App {
 //                   "X" says goodbye, and default says the command is invalid
 
 
-        System.out.print("Enter a number from 0 to 2: ");
-        int productNumber = scanner.nextInt();
-        String description = switch (productNumber) {
-            case 0 -> "456710' 2x4  (grade B)9.99\n";
+//            System.out.print("Enter a letter: ");
+//            String productChoice = scanner.next();
+//            String description = switch (productChoice) {
+                switch (command.toUpperCase()) {
+                    case "A" -> {
+                        System.out.println("--Full Inventory--");
+                    }
+                    case "D" -> {
+                        System.out.println("Product id is: ");
+                    }
+                    case "X" -> {
+                        System.out.println("Application ending. Goodbye!");
+                    }
 
-            case 1 -> "1234Hammer19.49\n";
+                    default -> {
+                        System.out.println("Invalid product");
 
-            case 2 -> "2345Box of nails9.29\n";
 
-            default -> "Invalid product";
-        };
 //        int dayNumber = 3;
 //        String description;
 //        if (dayNumber == 0) {
@@ -71,7 +78,9 @@ public class App {
 //            description = "Tuesday";
 //        } else if (dayNumber == 3) {
 //            description = "Wednesday";
-        }
+                    }
+                }
+             }
         scanner.close();
     }
 }
