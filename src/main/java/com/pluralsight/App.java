@@ -53,34 +53,35 @@ public class App {
 //            System.out.print("Enter a letter: ");
 //            String productChoice = scanner.next();
 //            String description = switch (productChoice) {
-                switch (command.toUpperCase()) {
-                    case "A" -> {
-                        System.out.println("--Full Inventory--");
-                    }
-                    case "D" -> {
-                        System.out.println("Product id is: ");
-                    }
-                    case "X" -> {
-                        System.out.println("Application ending. Goodbye!");
-                    }
+            switch (command.toUpperCase()) {
+                case "A" -> {
+                    System.out.println("--Full Inventory--");
+                }
+                case "D" -> {
+                    System.out.println("Product id is: ");
+                }
+                case "X" -> {
+                    System.out.println("Application ending. Goodbye!");
+                }
 
-                    default -> {
-                        System.out.println("Invalid product");
+                default -> {
+                    System.out.println("Invalid product");
 
 
-//        int dayNumber = 3;
-//        String description;
-//        if (dayNumber == 0) {
-//            description = "Sunday";
-//        } else if (dayNumber == 1) {
-//            description = "Monday";
-//        } else if (dayNumber == 2) {
-//            description = "Tuesday";
-//        } else if (dayNumber == 3) {
-//            description = "Wednesday";
+                    int dayNumber = 3;
+                    String description;
+                    if (dayNumber == 0) {
+                        description = "Sunday";
+                    } else if (dayNumber == 1) {
+                        description = "Monday";
+                    } else if (dayNumber == 2) {
+                        description = "Tuesday";
+                    } else if (dayNumber == 3) {
+                        description = "Wednesday";
                     }
                 }
-             }
-        scanner.close();
+            }
+            scanner.close();
+        }
     }
 }
