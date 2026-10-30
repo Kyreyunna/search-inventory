@@ -38,7 +38,7 @@ public class App {
 
 ## Screenshot
 
-![The app is ruuning the menu until the user quits.]
+<img alt="The display menu" src="C:\Users\kyreyunnahaugabook\OneDrive - Year Up- BOS\Pluralsight-Workbook3_Folder\search-inventory\images\display-menu.png"/>
 
 
 
