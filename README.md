@@ -1,35 +1,44 @@
-# Bedtime Stories
+# Search Inventory
 
-A command-line app that reads a children's story from a file
-and prints it with **line numbers**.
+A scanner with a **menu** that displays different options and runs until the user exits.
 
 ## Features
 
-- Pick any story by its file name
-- Every line is numbered
-- A friendly message if the story isn't found
+- Scanner prompts the user to enter a letter
+- While loop keeps running the application's menu until you choose to exit
+- A friendly message when you exit the menu
 
 ## How to run it
 
 1. Open the project in IntelliJ
 2. Run `App.java`
-3. Type a story name, like `goldilocks.txt`
+3. Type one of the options given in the menu presented
 
 ## Interesting code
 
 ```java
-String line = bufferedReader.readLine();
-while (line != null) {
-    System.out.println(line);
-    line = bufferedReader.readLine();
+package com.pluralsight;
+
+import java.util.*;
+
+public class App {
+    static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String command = "";
+        while (!command.equalsIgnoreCase("X")) {
+            System.out.println("A) List all products");
+            System.out.println("D) Lookup a product by its id");
+            System.out.println("X) Quit the application");
+            System.out.print("Enter a command: ");
+            command = scanner.nextLine();
+        }
+    }
 }
 ```
 
 ## Screenshot
 
-![The home screen](images/home-screen.png)
-
-Made by Sam for the [Java Academy](https://craigmckeachie.github.io/java-academy-docs/).
+![The app is ruuning the menu until the user quits.]
 
 
 
